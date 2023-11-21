@@ -9,5 +9,11 @@ recetas = [
         854, 2, "18/01/2023",
         "Tomar 1 loratadina cada 24 horas",
         ["P64-O", "Loratadina", "Pastillas", 50]
-    ]
+    ],
+    [
+        192, 3, "21/11/2023",
+        "Tomar cada 11 horas las dos",
+        ["C02-1", "Tramador", "Patillas", 100],
+        ["AD0-9", "Antitusigeno", "Jarabe", 500]
+    ],
 ]
