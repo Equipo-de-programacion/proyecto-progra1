@@ -1,0 +1,1 @@
+tiposDeMedicamentos = ("ampolleta", "capsulas", "comprimido/pastillas", "capsulas")
