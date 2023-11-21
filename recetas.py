@@ -13,7 +13,7 @@ recetas = [
     [
         192, 3, "21/11/2023",
         "Tomar cada 11 horas las dos",
-        ["C02-1", "Tramador", "Patillas", 100],
-        ["AD0-9", "Antitusigeno", "Jarabe", 500]
+        ["C02-1", "Tramadol", "Patillas", 100],
+        ["AD0-9", "Histaverin", "Jarabe", 1000]
     ],
 ]

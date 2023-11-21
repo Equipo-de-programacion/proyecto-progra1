@@ -51,6 +51,3 @@ def borrarPaciente():
             print(f"\n{mostrarPacientes(pacientes)}")
             seguirBorrando = input("¿Continuar con otro paciente? s/n ")
             eliminarPaciente = True if seguirBorrando.lower() == "s" else False
-
-
-borrarPaciente()

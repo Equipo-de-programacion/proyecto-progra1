@@ -1,0 +1,26 @@
+medicamentos = (
+    [
+        "A08-4",
+        "Paracetamol",
+        "Pastillas",
+        100
+    ],
+    [
+        "A04-2",
+        "Antitusigeno",
+        "Jarabe",
+        500
+    ],
+    [
+        "P64-O",
+        "Tramadol",
+        "Pastillas",
+        100
+    ],
+    [
+        "AD0-9",
+        "Histaverin",
+        "Jarabe",
+        1000
+    ]
+)
