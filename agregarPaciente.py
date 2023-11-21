@@ -4,6 +4,7 @@ y al final retorna la lista con ese nuevo paciente"""
 from pedirDatos import pedirDatos
 from pacientes import pacientes
 from mostrarPacientes import mostrarPacientes
+from mostrarPaciente import mostrarPaciente
 
 def agregarPaciente():
     agregarPaciente = True
@@ -26,7 +27,9 @@ def agregarPaciente():
             break
         else:
             paciente = pedirDatos(numPaciente)
-            pacientes.append(paciente)
-            print(f"\n{mostrarPacientes(pacientes)}\n")
-            deseaContinuar = input("¿Desea agregar otro paciente?: s/n ")
-            agregarPaciente = False if deseaContinuar.lower() == "n" else True
+            respuesta = mostrarPaciente(paciente)
+            if respuesta:
+                pacientes.append(paciente)
+                print(f"\n{mostrarPacientes(pacientes)}\n")
+                deseaContinuar = input("¿Desea agregar otro paciente?: s/n ")
+                agregarPaciente = False if deseaContinuar.lower() == "n" else True
