@@ -1,11 +1,14 @@
+from agregarPaciente import agregarPaciente 
+
 #Menu
 ControladorMenu=0
 #Menu general 
 while ControladorMenu==0:
 #Bucle que controla el rango del menu  
     while True:
+        #No se debe poner un print dentro de un input
         ControladorMenu=int(input(print("1. Agregar un nuevo paciente al catalogo\n2. Dar de baja un paciente del catalogo\n3. Actualizar los datos de un paciente\n4. Mostrar el listado de pacientes\n5. Generar una receta a un paciente\n6. Eliminar una receta generada\n7. Actualizar los datos de una receta [Presentacion, gramaje y/o dosis]\n8. Mostrar el listado de recetas generadas a determinado paciente \n9. Mostrar listado de medicamentos\n10. Cerrar \nDigite opcion: ")))
-       
+
         if ControladorMenu <= 10 and ControladorMenu >= 1:
             break
         elif ControladorMenu>10 or ControladorMenu<1:
@@ -16,7 +19,7 @@ while ControladorMenu==0:
     #Los "HOla[numero]" son para verificar que se ejecute y porque si no me marca error porque no hay instrucciones jajaja"
     if ControladorMenu==1:
         #llamar funcion 1 y ejecutar segun el problema
-        print("Hola1")
+        agregarPaciente()
     elif ControladorMenu==2:
         #llamar funcion 2 y ejecutar segun el problema
         print("Hola2")
