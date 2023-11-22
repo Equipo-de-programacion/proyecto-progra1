@@ -1,13 +1,12 @@
 from recetas import recetas
 
-
-def mostrarRecetas(numeroDelPaciente):
+def mostrarRecetas(folioReceta):
     indexOfReceta = 0
     recetaEncontrada = False
     recetasCompletas = []
 
     for receta in recetas:
-        if receta[0] == numeroDelPaciente:
+        if receta[1] == folioReceta:
             recetaEncontrada = True
             recetasCompletas.append(receta)
             indexOfReceta += 1
