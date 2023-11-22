@@ -4,6 +4,8 @@ from borrarPaciente import borrarPaciente
 from actualizarPaciente import actualizarPaciente
 from mostrarPacientes import mostrarPacientes
 from generarReceta import generarReceta
+from borrarRecetas import borrarRecetas
+from actualizarRecetaMedica import actualizarRecetaMedica
 
 # Menu
 ControladorMenu = 0
@@ -46,10 +48,13 @@ while ControladorMenu == 0:
         ControladorMenu = 0
     elif ControladorMenu == 6:
         # llamar funcion 6 y ejecutar segun el problema
-        print("Hola6")
+        borrarRecetas()
+        ControladorMenu = 0
+
     elif ControladorMenu == 7:
         # llamar funcion 7 y ejecutar segun el problema
-        print("Hola7")
+        actualizarRecetaMedica()
+        ControladorMenu = 0
     elif ControladorMenu == 8:
         # llamar funcion 8 y ejecutar segun el problema
         print("Hola8")

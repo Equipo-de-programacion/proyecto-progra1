@@ -19,6 +19,8 @@ def agregarPaciente():
         # Iterar sobre la lista pacientes para ver si el numero de paciente está
         for paciente in pacientes:
             existeElPaciente = True if paciente[0] == numPaciente else False
+            if existeElPaciente:
+              break
 
         """Condicional que en caso de no existir el paciente crear uno e añadirlo a 
       la lista ya hecha y en caso de que si exista decirle que no puede agregar"""

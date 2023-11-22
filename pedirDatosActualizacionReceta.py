@@ -38,10 +38,6 @@ def pedirDatosActualizacionReceta(receta):
         "Ingrese la dosis de la receta en caso de querer cambiarla: ")
 
     dosis = nuevaDosis if len(nuevaDosis) > 0 else receta[3]
-    """ print(f"Codigo: {receta[0]}")
-    print(f"Folio: {receta[1]}")
-    print(f"Fecha: {fecha}")
-    print(nuevosMedicamentos) """
     recetaActualizada = [receta[0], receta[1],
                          fecha, dosis, nuevosMedicamentos]
     return recetaActualizada
