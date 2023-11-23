@@ -1,5 +1,5 @@
 from medicamentos import medicamentos
-from pandas import pandas
+import pandas
 
 
 def mostrarListadoDeMedicamentos():

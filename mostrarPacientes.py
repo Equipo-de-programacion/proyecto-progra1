@@ -3,7 +3,6 @@
 # argumento la lista de pacientes para poder separarla e imprimirla con formato
 import pandas
 
-
 def mostrarPacientes(listaPacientes):
     if len(listaPacientes) <= 0:
         return "Por el momento no hay paciente"

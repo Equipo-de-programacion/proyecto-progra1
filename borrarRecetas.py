@@ -1,6 +1,6 @@
 from recetas import recetas
-from mostrarTodasLasRecetas import mostrarTodasLasRecetas
-from mostrarRecetas import mostrarRecetas
+from utileria import mostrarTodasLasRecetas
+from utileria import mostrarRecetas
 
 def borrarRecetas():
     borrarReceta = True

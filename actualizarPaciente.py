@@ -1,6 +1,6 @@
-from mostrarPacientes import mostrarPacientes
+from utileria import mostrarPacientes
 from pacientes import pacientes
-from pedirDatosActualizacion import pedirDatosActualizacion
+from utileria import pedirDatosActualizacion
 
 
 def actualizarPaciente():

@@ -1,10 +1,10 @@
 """La funcion llama a otra una vez valida que ese numero de paciente no existe
 y al final retorna la lista con ese nuevo paciente"""
 
-from pedirDatos import pedirDatos
+from utileria import pedirDatos
 from pacientes import pacientes
 from mostrarPacientes import mostrarPacientes
-from confirmarPaciente import confirmarPaciente
+from utileria import confirmarPaciente
 
 def agregarPaciente():
     agregarPaciente = True

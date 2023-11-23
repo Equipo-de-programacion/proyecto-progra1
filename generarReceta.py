@@ -1,6 +1,6 @@
 from pacientes import pacientes
 from mostrarPacientes import mostrarPacientes
-from agregarMedicinas import agregarMedicinas
+from utileria import agregarMedicinas
 from recetas import recetas
 import random
 
@@ -30,9 +30,10 @@ def generarReceta():
         if not pacienteEncontrado:
             print("Este paciente no existe")
         else:
-            medicinasParaElPaciente = agregarMedicinas(indexDelPacienteReceta, folio, fecha)
-            
-            if type(medicinasParaElPaciente) == list :
+            medicinasParaElPaciente = agregarMedicinas(
+                indexDelPacienteReceta, folio, fecha)
+
+            if type(medicinasParaElPaciente) == list:
                 Dosis = input("¿Cual es la dosis de esta receta?: ")
                 confirmacion = input("\n¿Quieres confirmar esta receta? s/n ")
 

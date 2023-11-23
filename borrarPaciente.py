@@ -3,7 +3,7 @@
 
 from pacientes import pacientes
 from mostrarPacientes import mostrarPacientes
-from mostrarRecetas import mostrarRecetas
+from utileria import mostrarRecetas
 from recetas import recetas
 
 

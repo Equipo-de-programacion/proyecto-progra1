@@ -1,9 +1,9 @@
-from mostrarTodasLasRecetas import mostrarTodasLasRecetas
-from recetas import recetas
 from mostrarPacientes import mostrarPacientes
+from recetas import recetas
 from pacientes import pacientes
-from mostrarRecetas import mostrarRecetas
-from pedirDatosActualizacionReceta import pedirDatosActualizacionReceta
+from utileria import mostrarTodasLasRecetas
+from utileria import mostrarRecetas
+from utileria import pedirDatosActualizacionReceta
 
 
 def actualizarRecetaMedica():
