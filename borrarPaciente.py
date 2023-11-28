@@ -30,9 +30,9 @@ def borrarPaciente():
                     break
                 else:
                     indexDelPacienteAEliminar += 1
-
-            if not pacienteEncontrado:
+            if pacienteEncontrado == False:
                 print("Este paciente no existe")
+                break
             else:
                 print(
                     f"\n{mostrarPacientes([pacientes[indexDelPacienteAEliminar]])}\n")
@@ -48,6 +48,6 @@ def borrarPaciente():
                         if receta[0] == pacienteAEliminar:
                             recetas.remove(receta)
 
-            print(f"\n{mostrarPacientes(pacientes)}")
-            seguirBorrando = input("¿Continuar con otro paciente? s/n ")
-            eliminarPaciente = True if seguirBorrando.lower() == "s" else False
+                print(f"\n{mostrarPacientes(pacientes)}")
+                seguirBorrando = input("¿Continuar con otro paciente? s/n ")
+                eliminarPaciente = True if seguirBorrando.lower() == "s" else False
