@@ -14,8 +14,6 @@ def generarReceta():
         print(f"\n{mostrarPacientes(pacientes)}")
         pacienteReceta = int(
             input("¿A que paciente quieres hacer la receta? "))
-        fecha = input(
-            "Ingrese la fecha en el siguiente formato: DD/MM/YYY ")
 
         indexDelPacienteReceta = 0
         pacienteEncontrado = False
@@ -29,9 +27,12 @@ def generarReceta():
 
         if not pacienteEncontrado:
             print("Este paciente no existe")
+            crearReceta = False
         else:
+            fecha = input(
+                "Ingrese la fecha en el siguiente formato: DD/MM/YYY ")
             medicinasParaElPaciente = agregarMedicinas(
-                indexDelPacienteReceta, folio, fecha)
+                indexDelPacienteReceta, folio, fecha, pacienteReceta)
 
             if type(medicinasParaElPaciente) == list:
                 Dosis = input("¿Cual es la dosis de esta receta?: ")

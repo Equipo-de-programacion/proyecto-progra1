@@ -7,6 +7,7 @@ from generarReceta import generarReceta
 from borrarRecetas import borrarRecetas
 from actualizarRecetaMedica import actualizarRecetaMedica
 from mostrarListadoDeMedicamentos import mostrarListadoDeMedicamentos
+from mostrarRecetaPaciente import mostrarRecetasPaciente
 
 # Menu
 ControladorMenu = 0
@@ -58,7 +59,8 @@ while ControladorMenu == 0:
         ControladorMenu = 0
     elif ControladorMenu == 8:
         # llamar funcion 8 y ejecutar segun el problema
-        print("Hola8")
+        mostrarRecetasPaciente()
+        ControladorMenu = 0
     elif ControladorMenu == 9:
         # llamar funcion 9 y ejecutar segun el problema
         mostrarListadoDeMedicamentos()

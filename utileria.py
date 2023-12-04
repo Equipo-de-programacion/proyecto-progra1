@@ -5,7 +5,7 @@ from recetas import recetas
 import pandas
 
 
-def agregarMedicinas(indexPaciente, folio, fecha):
+def agregarMedicinas(indexPaciente, folio, fecha, numeroPaciente):
     medicinasParaElPaciente = []
     medicina = True
     while medicina:
@@ -16,19 +16,41 @@ def agregarMedicinas(indexPaciente, folio, fecha):
         indexMedicina = 0
         medicinaEncontrada = False
         medicinaActual = False
-        for medicina in medicamentos:
-            if medicina[0] == medicinaCodigo:
+        for medicinaIterable in medicamentos:
+            if medicinaIterable[0] == medicinaCodigo:
                 medicinaEncontrada = True
-                medicinaActual = medicina
+                medicinaActual = medicinaIterable
                 break
             else:
                 indexMedicina += 1
 
         if medicinaEncontrada:
-            medicinasParaElPaciente.append(medicinaActual)
-            print("Medicina agregada\n")
-            continuarAgregando = input("¿Desea agregar otra medicina a la receta? s/n ")
-            medicina = True if continuarAgregando.lower() == "s" else False
+            # Verificar medicina
+            medicinaRepetida = False
+            for receta in recetas:
+                if receta[0] == numeroPaciente:
+                    medicamentosDeReceta = receta[4:]
+                    for h in medicamentosDeReceta:
+                        if h[0] == medicinaCodigo:
+                            print("El paciente ya cuenta con esta medicina")
+                            medicinaRepetida = True
+                            break
+
+                    for i in medicinasParaElPaciente:
+                        if i[0] == medicinaCodigo:
+                            print("El paciente ya cuenta con esta medicina")
+                            medicinaRepetida = True
+                            break
+
+            if not medicinaRepetida:
+                medicinasParaElPaciente.append(medicinaActual)
+                print("Medicina agregada\n")
+                continuarAgregando = input(
+                    "¿Desea agregar otra medicina a la receta? s/n ")
+                medicina = True if continuarAgregando.lower() == "s" else False
+            else:
+                medicina = False
+                return False
         else:
             return print("Esa medicina no existe ")
 
@@ -39,8 +61,9 @@ def agregarMedicinas(indexPaciente, folio, fecha):
         print(f"Nombre cientifico: {medicinaParaElPaciente[1]}")
         print(f"Presentación: {medicinaParaElPaciente[2]}")
         print(f"Gramaje/ml: {medicinaParaElPaciente[3]}\n")
-    
+
     return medicinasParaElPaciente
+
 
 def confirmarPaciente(paciente):
     alergias = "Ninguna" if len(paciente[5]) <= 0 else paciente[5]
@@ -48,6 +71,7 @@ def confirmarPaciente(paciente):
         f"\nNombre: {paciente[1]}\nDirección: {paciente[2]}\nSexo: {paciente[3]}\nAño de nacimiento: {paciente[4]}\nAlergias: {alergias}")
     respuesta = input("\n\n¿Confirmar el registro?: s/n ")
     return respuesta.lower() == "s"
+
 
 def mostrarRecetas(folioReceta):
     indexOfReceta = 0
@@ -73,6 +97,7 @@ def mostrarRecetas(folioReceta):
                 print(f"Grmaje/ml: {receta[medicamentos][3]}\n")
 
             print(receta[3])
+
 
 def mostrarPacientes(listaPacientes):
     if len(listaPacientes) <= 0:
@@ -106,6 +131,7 @@ def mostrarPacientes(listaPacientes):
 
         return pandas.DataFrame(data)
 
+
 def mostrarRecetasPaciente():
     recetasDelPaciente = list()
     print(mostrarPacientes(pacientes))
@@ -120,6 +146,7 @@ def mostrarRecetasPaciente():
     print("Listado terminado, mostrando recetas del paciente numero ",
           numeroPacienteRecetasAMostrar)
     print(recetasDelPaciente)
+
 
 def mostrarTodasLasRecetas():
     folios = []
@@ -154,9 +181,10 @@ def mostrarTodasLasRecetas():
         "Sexo": sexos,
         "Año de nacimiento": años,
         "Alergias": alergias
-        
+
     }
     print(pandas.DataFrame(data))
+
 
 def pedirDatos(numeroDePaciente):
     # Pide la información básica del paciente
@@ -169,15 +197,18 @@ def pedirDatos(numeroDePaciente):
     alergiasPaciente = []
     agregarAlergia = True
     while agregarAlergia == True:
-        alergia = input('Ingrese la alergia del paciente: (En caso de no tener no responder) ')
+        alergia = input(
+            'Ingrese la alergia del paciente: (En caso de no tener no responder) ')
         if len(alergia) <= 0:
             agregarAlergia = False
         else:
             alergiasPaciente.append(alergia)
 
     # Crea al nuevo paciente y lo retorna
-    nuevoPaciente = [numeroDePaciente, nombrePaciente, direccionPaciente, sexoPaciente.upper(), añoPaciente, alergiasPaciente]
+    nuevoPaciente = [numeroDePaciente, nombrePaciente, direccionPaciente,
+                     sexoPaciente.upper(), añoPaciente, alergiasPaciente]
     return nuevoPaciente
+
 
 def pedirDatosActualizacion(paciente):
     nombrePaciente = input(
@@ -216,6 +247,7 @@ def pedirDatosActualizacion(paciente):
     pacienteActualizado = [paciente[0], nombrePaciente,
                            direccionPaciente, sexoPaciente, añoPaciente, alergiasPaciente]
     return pacienteActualizado
+
 
 def pedirDatosActualizacionReceta(receta):
 
@@ -256,4 +288,3 @@ def pedirDatosActualizacionReceta(receta):
     recetaActualizada = [receta[0], receta[1],
                          fecha, dosis, nuevosMedicamentos]
     return recetaActualizada
-

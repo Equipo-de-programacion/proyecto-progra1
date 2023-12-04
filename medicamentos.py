@@ -6,7 +6,7 @@ medicamentos = [
         4
     ),
     (
-        "H03AA-02 ",
+        "H03AA-02",
         "Novotiral",
         "Cápsulas",
         50
